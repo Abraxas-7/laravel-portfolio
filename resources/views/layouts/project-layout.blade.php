@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <h1> @yield('title')</h1>
+    @include('partials.header')
 
-    <main>
+    <main class="bg-light">
         <div class="container">
             @yield('content')
         </div>

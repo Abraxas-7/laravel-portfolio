@@ -3,23 +3,41 @@
 @section('title', $project->name)
 
 @section('content')
-    <div class="container">
+    <div class="container py-5">
 
-        <a href="{{ route('projects.edit', $project) }}" class="btn btn-outline-warning">Modifica</a>
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteProject">
-            Elimina
-        </button>
+        <div class="d-flex justify-content-between border border-secondary bg-white rounded border-2 p-2 mb-3">
+            <div>
+                <a href="{{ route('projects.index') }}" class="btn btn-outline-dark border-0 fw-bold p-1">
+                    <i class="fa-solid fa-left-long fs-4"></i>
+                </a>
+            </div>
 
-        <div>
-            <small>{{ $project->client }}</small> <br>
-
-            <small>{{ $project->period }}</small>
-
-            <p>{{ $project->description }}</p>
+            <div>
+                <a href="{{ route('projects.edit', $project) }}" class="btn btn-outline-warning border-0 fw-bold p-1">
+                    <i class="fa-solid fa-pen-to-square fs-4"></i>
+                </a>
+                <button type="button" class="btn btn-outline-danger border-0 fw-bold p-1" data-bs-toggle="modal"
+                    data-bs-target="#deleteProject">
+                    <i class="fa-solid fa-trash fs-4"></i>
+                </button>
+            </div>
         </div>
 
-        <a href="{{ route('projects.index') }}" class="btn btn-outline-primary">Torna lista progetti</a>
+
+        <div class="py-3">
+            <h2 class="mb-4">{{ $project->name }}</h2>
+
+            <div class="d-flex justify-content-between mb-2">
+                <h6>{{ $project->client }} </h6>
+                <h6>{{ $project->period }} </h6>
+            </div>
+
+            <p class="mb-3">{{ $project->description }}</p>
+        </div>
+
     </div>
+
+
 
     <div class="modal fade" id="deleteProject" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -36,11 +54,10 @@
                     <form action="{{ route('projects.destroy', $project) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" class="btn btn-outline-danger" value="Elimina">
+                        <input type="submit" class="btn btn-danger" value="Elimina">
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.project-layout')
 
-@section('title', 'Modifica ' . $project->name)
+@section('title', 'Modifica progetto : ' . $project->name)
 
 @section('content')
     <div class="py-5">
@@ -26,8 +26,12 @@
             </div>
 
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary">
-                    Submit
+                <a href="{{ route('projects.show', $project) }}"
+                    class="btn btn-outline-danger fw-bold border-2 fs-6 p-2 px-3 me-3">
+                    Annulla
+                </a>
+                <button type="submit" class="btn btn-outline-primary fw-bold border-2 fs-6 p-2 px-3">
+                    Invia
                 </button>
             </div>
         </form>
