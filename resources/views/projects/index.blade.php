@@ -3,6 +3,12 @@
 @section('title', 'Lista progetti')
 
 @section('content')
+
+    <div class="py-3 d-flex flex-row-reverse">
+        <a type="button" class="btn btn-primary p-2" href="{{ route('projects.create') }}">Nuovo progetto</a>
+    </div>
+
+
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
             <tr>
