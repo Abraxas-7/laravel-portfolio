@@ -9,8 +9,22 @@
             @method('PUT')
 
             <div class="mb-3">
-                <label for="nome" class="form-label">Nome progetto</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $project->name }}">
+                <div class="row">
+                    <div class="col-8">
+                        <label for="nome" class="form-label">Nome progetto</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ $project->name }}"
+                            required>
+                    </div>
+                    <div class="col">
+                        <label for="type" class="form-label">Tipo progetto</label>
+                        <select name="type" id="type" class="form-select" required>
+                            @foreach ($types as $type)
+                                <option value="{{ $type->id }}" {{ $type->id == $project->type_id ? 'selected' : '' }}>
+                                    {{ $type->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="client" class="form-label">Nome cliente</label>

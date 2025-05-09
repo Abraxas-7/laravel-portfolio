@@ -20,6 +20,7 @@ class ProjectTableSeeder extends Seeder
             $newProject = new Project();
 
             $newProject->name = $faker->sentence(3);
+            $newProject->type_id = rand(1, 6);
             $newProject->client = $faker->company;
             $newProject->period = $faker->monthName . ' ' . $faker->year;
             $newProject->description = $faker->paragraphs(12, true);

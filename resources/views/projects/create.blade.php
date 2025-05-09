@@ -7,8 +7,21 @@
         <form action=" {{ route('projects.store') }}" method="POST">
             @csrf
             <div class="mb-3">
-                <label for="nome" class="form-label">Nome progetto</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <div class="row">
+                    <div class="col-8">
+                        <label for="nome" class="form-label">Nome progetto</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col">
+                        <label for="type" class="form-label">Tipo progetto</label>
+                        <select name="type" id="type" class="form-select" required>>
+                            <option value="" disabled selected>Seleziona un tipo</option>
+                            @foreach ($types as $type)
+                                <option value="{{ $type->id }}">{{ $type->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="client" class="form-label">Nome cliente</label>

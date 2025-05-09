@@ -17,6 +17,7 @@
             <thead class="table-dark">
                 <tr class="fs-5">
                     <th>Nome</th>
+                    <th>Tipo</th>
                     <th>Cliente</th>
                     <th>Periodo</th>
                     <th></th>
@@ -26,6 +27,7 @@
                 @foreach ($projects as $project)
                     <tr>
                         <th>{{ $project->name }}</th>
+                        <th>{{ $project->type?->name ?? 'Nessun tipo' }}</th>
                         <th>{{ $project->client }}</th>
                         <th>{{ $project->period }}</th>
                         <th class="text-center"><a href="{{ route('projects.show', $project) }}">Visualizza progetto</a></th>
