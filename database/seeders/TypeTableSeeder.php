@@ -16,12 +16,12 @@ class TypeTableSeeder extends Seeder
     public function run(Faker $faker): void
     {
         $types = [
-            'php',
-            'html',
-            'css',
-            'js',
-            'react',
-            'laravel',
+            'desktop',
+            'mobile',
+            'web',
+            'cms',
+            'api',
+            'e-commerce',
         ];
 
         foreach ($types as $type) {
