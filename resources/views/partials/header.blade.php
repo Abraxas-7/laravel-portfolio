@@ -11,5 +11,9 @@
         <a href="{{ route('types.index') }}" class="btn btn-outline-light fw-bold border-0 fs-6 p-2 me-2">
             Tipi
         </a>
+
+        <a href="{{ route('technologies.index') }}" class="btn btn-outline-light fw-bold border-0 fs-6 p-2 me-2">
+            Tecnologie
+        </a>
     </div>
 </header>

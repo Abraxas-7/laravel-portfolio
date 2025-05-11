@@ -12,8 +12,17 @@
             <h2 class="mb-2">{{ $project->name }}</h2>
 
             <h3 class="py-3">
-                <th>{{ $project->type?->name ?? 'Nessun tipo' }}</th>
+                {{ $project->type?->name ?? 'Nessun tipo' }}
             </h3>
+
+            <h4 class="pb-3">
+
+                @forelse ($project->technologies as $technology)
+                    {{ $technology->name }}
+                @empty
+                    Nessuna tecnologia associata a questo progetto
+                @endforelse
+            </h4>
 
             <div class="d-flex justify-content-between mb-2">
                 <h6>{{ $project->client }} </h6>

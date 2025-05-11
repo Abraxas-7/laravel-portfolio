@@ -23,6 +23,16 @@
                     </div>
                 </div>
             </div>
+            <div class="d-flex flex-wrap justify-content-center">
+                @foreach ($technologies as $technology)
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="technologies[]" value="{{ $technology->id }}"
+                            id="technology{{ $technology->id }}">
+                        <label class="form-check-label me-2"
+                            for="technology{{ $technology->id }}">{{ $technology->name }}</label>
+                    </div>
+                @endforeach
+            </div>
             <div class="mb-3">
                 <label for="client" class="form-label">Nome cliente</label>
                 <input type="text" class="form-control" id="client" name="client" required>

@@ -26,7 +26,7 @@
                     <tr>
                         <th>{{ $type->name }}</th>
                         <th>{{ Str::limit($type->description, 250) }}</th>
-                        <th class="text-center"><a href="{{ route('types.show', $type) }}">Visualizza progetto</a></th>
+                        <th class="text-center"><a href="{{ route('types.show', $type) }}">Visualizza tipo</a></th>
                     </tr>
                 @endforeach
             </tbody>

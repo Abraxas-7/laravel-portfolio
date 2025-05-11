@@ -1,22 +1,19 @@
 @extends('layouts.project-layout')
 
-@section('title', 'Nuovo tipo')
+@section('title', 'Nuova technologia')
 
 @section('content')
     <div class="py-5">
-        <form action=" {{ route('types.store') }}" method="POST">
+        <form action=" {{ route('technologies.store') }}" method="POST">
             @csrf
             <div class="mb-3">
-                <label for="nasme" class="form-label">Nome tipo</label>
+                <label for="name" class="form-label">Nome tipo</label>
                 <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Descrivi il tipo</label>
-                <textarea class="form-control" id="description" name="description" rows="10" required></textarea>
             </div>
 
             <div class="d-flex justify-content-center">
-                <a href="{{ route('types.index') }}" class="btn btn-outline-danger fw-bold border-2 fs-6 p-2 px-3 me-3">
+                <a href="{{ route('technologies.index') }}"
+                    class="btn btn-outline-danger fw-bold border-2 fs-6 p-2 px-3 me-3">
                     Annulla
                 </a>
                 <button type="submit" class="btn btn-outline-primary fw-bold border-2 fs-6 p-2 px-3">
